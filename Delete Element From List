@@ -1,0 +1,26 @@
+#include <stdio.h>
+int  main() {
+    int N, ele_to_del, i, j;
+    scanf("%d", &N);
+    int elements[N];
+    for (i = 0; i < N; i++) {
+        scanf("%d", &elements[i]);
+    }
+    scanf("%d", &ele_to_del);
+    for (i = 0; i < N; i++) {
+        if (elements[i] == ele_to_del) {
+            for (j = i; j < N - 1; j++) {
+                elements[j] = elements[j + 1];
+            }
+            N--;
+            break;
+        }
+    }
+    for (i = 0; i < N; i++) {
+        printf("%d", elements[i]);
+        if (i != N - 1) {
+            printf(" ");
+        }
+    }
+    return 0 ;
+}
